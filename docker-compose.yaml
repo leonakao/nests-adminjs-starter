@@ -3,18 +3,19 @@ services:
     build:
       context: .
       target: build
-    container_name: app
+    container_name: nas-app
     user: 1000:1000
     command: 'pnpm run start:dev'
     volumes:
       - .:/usr/src/app
+      - /usr/src/app/node_modules
     ports:
       - 3000:3000
     depends_on:
       - db
   db:
     image: postgres:18.0
-    container_name: db
+    container_name: nas-db
     shm_size: 128mb
     environment:
       - POSTGRES_DB=postgres
