@@ -1,5 +1,4 @@
 import { DynamicModule, Module } from '@nestjs/common';
-import { AdminModule as AdminJSModule } from '@adminjs/nestjs';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigService } from '@nestjs/config';
 import { registerTypeormAdapter } from './adapters/typeorm.adapter';
@@ -21,31 +20,34 @@ export class AdminModule {
     return {
       module: AdminModule,
       imports: [
-        AdminJSModule.createAdminAsync({
-          imports: [TypeOrmModule.forFeature([User])],
-          inject: [ConfigService],
-          useFactory: async (configService: ConfigService) => {
-            await registerTypeormAdapter();
-            const { componentLoader, components } = await getComponentLoader();
+        import('@adminjs/nestjs').then(({ AdminModule }) =>
+          AdminModule.createAdminAsync({
+            imports: [TypeOrmModule.forFeature([User])],
+            inject: [ConfigService],
+            useFactory: async (configService: ConfigService) => {
+              await registerTypeormAdapter();
+              const { componentLoader, components } =
+                await getComponentLoader();
 
-            return {
-              adminJsOptions: {
-                rootPath: '/admin',
-                branding: {
-                  withMadeWithLove: false,
-                  companyName: 'Admin Panel',
+              return {
+                adminJsOptions: {
+                  rootPath: '/admin',
+                  branding: {
+                    withMadeWithLove: false,
+                    companyName: 'Admin Panel',
+                  },
+                  resources: await Promise.all([createUserResource()]),
+                  locale,
+                  componentLoader,
+                  dashboard: {
+                    component: components.Dashboard,
+                  },
                 },
-                resources: await Promise.all([createUserResource()]),
-                locale,
-                componentLoader,
-                dashboard: {
-                  component: components.Dashboard,
-                },
-              },
-              auth: await createAdminAuth(configService, componentLoader),
-            };
-          },
-        }),
+                auth: await createAdminAuth(configService, componentLoader),
+              };
+            },
+          }),
+        ),
       ],
     };
   }

@@ -1,6 +1,6 @@
 import { validate } from 'class-validator';
-import { ActionRequest, Before, PropertyErrors } from '../types';
 import { ClassConstructor, plainToInstance } from 'class-transformer';
+import { ActionRequest, Before, PropertyErrors } from '../types';
 
 export const validateForm =
   <T extends object>(dtoClass: ClassConstructor<T>): Before =>

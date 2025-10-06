@@ -7,9 +7,8 @@ let components: Components;
 
 export const getComponentLoader = async () => {
   if (!componentLoader) {
-    const { ComponentLoader } = await import('adminjs');
-
-    componentLoader = new ComponentLoader();
+    const { ComponentLoader: CL } = await import('adminjs');
+    componentLoader = new CL();
 
     components = {
       Dashboard: componentLoader.add(
