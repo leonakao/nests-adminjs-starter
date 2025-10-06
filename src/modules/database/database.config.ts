@@ -2,7 +2,6 @@ import { DataSourceOptions } from 'typeorm';
 
 import * as dotenv from 'dotenv';
 
-// eslint-disable-next-line
 dotenv.config();
 
 export const dataSourceOptions: DataSourceOptions = {

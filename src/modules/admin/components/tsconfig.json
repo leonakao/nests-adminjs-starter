@@ -1,0 +1,35 @@
+{
+  "ts-node": {
+    "files": true
+  },
+  "compilerOptions": {
+    "outDir": "./built",
+    "target": "esnext",
+    "esModuleInterop": true,
+    "jsx": "react-jsx",
+    "declaration": true,
+    "declarationDir": "./types",
+    "emitDeclarationOnly": true,
+    "strictNullChecks": true,
+    "strictPropertyInitialization": true,
+    "strictFunctionTypes": true,
+    "strictBindCallApply": true,
+    "noImplicitThis": true,
+    "moduleResolution": "nodenext",
+    "module": "nodenext",
+    "baseUrl": ".",
+    "rootDir": "../../../../",
+    "typeRoots": ["node_modules/@types", "./vendor-types", "@adminjs/design-system/vendor-types"],
+    "paths": {
+      "react": ["node_modules/@types/react"]
+    },
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "allowImportingTsExtensions": true,
+    "noResolve": false,
+    "composite": true
+  },
+  "include": [
+    "./**/*"
+  ]
+}

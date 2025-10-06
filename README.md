@@ -22,7 +22,74 @@
 
 ## Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository with [AdminJS](https://adminjs.co/) integration.
+
+This is a clean, minimal starter template that includes:
+- **NestJS** - Progressive Node.js framework
+- **AdminJS** - Admin panel with user management
+- **TypeORM** - Database ORM with PostgreSQL support
+- **TypeScript** - Full type safety
+- **Docker** - Containerized development environment
+
+## Features
+
+- 🚀 **Ready-to-use Admin Panel** at `/admin`
+- 👥 **User Management** - Complete CRUD operations
+- 🎨 **Clean UI** - Modern, responsive design
+- 🌍 **Internationalization** - Portuguese translations included
+- 🔒 **Authentication** - Secure admin access
+- 📱 **Mobile Friendly** - Works on all devices
+
+## Quick Start
+
+1. **Clone and install dependencies:**
+```bash
+git clone <repository-url>
+cd nests-adminjs-starter
+pnpm install
+```
+
+2. **Set up environment variables:**
+```bash
+cp .env.example .env
+# Edit .env with your database credentials
+```
+
+3. **Start the database:**
+```bash
+docker-compose up -d
+```
+
+4. **Run database migrations:**
+```bash
+pnpm run migration:run
+```
+
+5. **Start the application:**
+```bash
+pnpm run start:dev
+```
+
+6. **Access the admin panel:**
+Open [http://localhost:3000/admin](http://localhost:3000/admin)
+
+## Customization
+
+### Adding New Resources
+
+1. Create your entity in `src/modules/database/entities/`
+2. Add the resource configuration in `src/modules/admin/resources/`
+3. Import and add it to the resources array in `admin.module.ts`
+
+### Customizing the Dashboard
+
+Edit `src/modules/admin/components/dashboard/index.tsx` to add your own statistics and information.
+
+### Adding Translations
+
+Add new translation files in `src/modules/admin/locales/` and update the locale configuration.
+
+For more detailed information, see the [Admin Module Documentation](src/modules/admin/README.md).
 
 ## Project setup
 
