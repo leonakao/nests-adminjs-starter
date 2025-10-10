@@ -1,4 +1,4 @@
-import { LocaleTranslations } from '../types';
+import { LocaleTranslations } from '../types/types.config.js';
 
 export const ptBrTranslation: LocaleTranslations = {
   properties: {},

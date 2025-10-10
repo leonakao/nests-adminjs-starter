@@ -1,6 +1,5 @@
 export type * from 'adminjs';
-export type * from '@adminjs/nestjs';
-export type * from './filters';
+export type * from './filters.js';
 
 import type { Action, ActionResponse, PropertyOptions } from 'adminjs';
 import { BaseEntity } from 'typeorm';

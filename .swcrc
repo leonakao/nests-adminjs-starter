@@ -16,7 +16,7 @@
     "baseUrl": "./"
   },
   "module": {
-    "type": "commonjs",
+    "type": "nodenext",
     "strict": false,
     "strictMode": true,
     "lazy": false,

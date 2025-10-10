@@ -1,9 +1,9 @@
-import { NAVIGATION } from '../../navigations';
-import { createResource } from '../../utils/create-resource.util';
-import { userFormLayout, userShowLayout } from './user.layouts';
-import { UserDto } from './user.dto';
-import { validateForm } from '../../hooks/validate-form.before';
-import { User } from 'src/modules/database';
+import { NAVIGATION } from '../../navigations/navigation.config.js';
+import { createResource } from '../../utils/create-resource.util.js';
+import { userFormLayout, userShowLayout } from './user.layouts.js';
+import { UserDto } from './user.dto.js';
+import { validateForm } from '../../hooks/validate-form.before.js';
+import { User } from '../../../database/entities/user.entity.js';
 
 export const createUserResource = async () => {
   return await createResource({

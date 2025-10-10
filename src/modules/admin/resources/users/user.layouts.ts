@@ -1,4 +1,4 @@
-import type { LayoutElementFunction } from '../../types';
+import type { LayoutElementFunction } from '../../types/types.config.js';
 
 export const userShowLayout: LayoutElementFunction = () => {
   return [['name'], ['email'], ['avatar'], ['isActive']];

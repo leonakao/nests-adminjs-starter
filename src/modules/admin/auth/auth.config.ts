@@ -1,5 +1,6 @@
 import { ConfigService } from '@nestjs/config';
-import { AdminModuleOptions, ComponentLoader } from '../types';
+import { AdminModuleOptions } from '@adminjs/nestjs';
+import { ComponentLoader } from '../types/types.config.js';
 
 export const createAdminAuth = async (
   configService: ConfigService,

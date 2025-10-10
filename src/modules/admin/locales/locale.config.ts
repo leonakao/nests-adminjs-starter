@@ -1,6 +1,6 @@
-import { Locale } from '../types';
-import { enUsTranslation } from './en-us.translation';
-import { ptBrTranslation } from './pt-br.translation';
+import { Locale } from '../types/types.config.js';
+import { enUsTranslation } from './en-us.translation.js';
+import { ptBrTranslation } from './pt-br.translation.js';
 
 export const locale: Locale = {
   language: 'pt-BR',

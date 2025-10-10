@@ -1,5 +1,5 @@
 import { BaseEntity, Between, FindOptionsWhere, In } from 'typeorm';
-import { Filter } from '../types';
+import { Filter } from '../types/types.config.js';
 
 export const applyFilters = (
   filters: Filter['filters'],

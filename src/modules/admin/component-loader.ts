@@ -1,4 +1,4 @@
-import { ComponentLoader } from './types';
+import { ComponentLoader } from './types/types.config.js';
 
 export type Components = Record<'Dashboard' | 'Avatar', string>;
 
