@@ -4,7 +4,13 @@
   "sourceRoot": "src",
   "compilerOptions": {
     "builder": "swc",
-    "typeCheck": false,
-    "deleteOutDir": true
+    "typeCheck": true,
+    "deleteOutDir": true,
+    "watchAssets": false,
+    "assets": [],
+    "webpack": false
+  },
+  "watchModeOptions": {
+    "ignore": ["dist", "node_modules", "**/*.spec.ts", "**/*.test.ts", "adminjs/bundle.js"]
   }
 }

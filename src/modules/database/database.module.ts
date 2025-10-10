@@ -8,7 +8,7 @@ import { dataSourceOptions } from './database.config';
   imports: [
     TypeOrmModule.forRootAsync({
       imports: [ConfigModule],
-      useFactory: () => dataSourceOptions,
+      useFactory: () => ({ ...dataSourceOptions, debug: false }),
       dataSourceFactory: async (options) => {
         const dataSource = await new DataSource(options).initialize();
         return dataSource;
